@@ -61,18 +61,20 @@ const dateFmt = (d: Date) =>
       </div>
     </section>
 
-    <section class="library-section">
-      <h2>Essays</h2>
-      {essays.map((essay) => (
-        <div class="library-entry">
-          <p class="name">
-            <a href={`/essays/${essay.id}`}>{essay.data.title}</a> · {dateFmt(essay.data.date)}
-          </p>
-          {essay.data.description && <p class="description">{essay.data.description}</p>}
-          <p class="canonical">Canonical page: optimisationblindness.org/essays/{essay.id}</p>
-        </div>
-      ))}
-    </section>
+    {essays.length > 0 && (
+      <section class="library-section">
+        <h2>Essays</h2>
+        {essays.map((essay) => (
+          <div class="library-entry">
+            <p class="name">
+              <a href={`/essays/${essay.id}`}>{essay.data.title}</a> · {dateFmt(essay.data.date)}
+            </p>
+            {essay.data.description && <p class="description">{essay.data.description}</p>}
+            <p class="canonical">Canonical page: optimisationblindness.org/essays/{essay.id}</p>
+          </div>
+        ))}
+      </section>
+    )}
 
     <section class="library-section">
       <h2>Working papers</h2>
@@ -92,7 +94,7 @@ const dateFmt = (d: Date) =>
     <section class="library-section">
       <h2>Version history</h2>
       <div class="library-entry">
-        <p class="description"><strong>19 May 2026</strong> — Site launched. Concept v1.0, RevEmo v1.0, DEQI v1.0, destination-level circuit breakers introduced, first essay published, Library established.</p>
+        <p class="description"><strong>19 May 2026</strong> — Site launched. Concept v1.0, RevEmo v1.0, DEQI v1.0, destination-level circuit breakers introduced, Library established.</p>
       </div>
     </section>
   </article>

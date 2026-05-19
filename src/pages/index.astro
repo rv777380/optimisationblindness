@@ -1,12 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { getCollection } from 'astro:content';
-
-const essays = await getCollection('essays');
-essays.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
-const latestEssay = essays[0];
-const dateFmt = (d: Date) =>
-  d.toLocaleDateString('en-GB', { month: 'long', year: 'numeric' });
 ---
 
 <BaseLayout title="optimisationblindness.org">
@@ -24,12 +17,6 @@ const dateFmt = (d: Date) =>
   <section>
     <p class="section-label">Recent</p>
     <ul class="recent-list">
-      {latestEssay && (
-        <li>
-          <em><a href={`/essays/${latestEssay.id}`}>{latestEssay.data.title}</a>.</em>
-          Essay. {dateFmt(latestEssay.data.date)}.
-        </li>
-      )}
       <li>
         <em><a href="/deqi">Optimisation Blindness at the Destination Level (DEQI)</a>.</em>
         Working paper, <em>International Journal of Tourism Cities</em>. Submitted, pending preprint.

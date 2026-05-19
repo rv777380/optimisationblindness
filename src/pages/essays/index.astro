@@ -20,7 +20,9 @@ const dateFmt = (d: Date) =>
 
     <hr />
 
-    {essays.map((essay) => (
+    {essays.length === 0 ? (
+      <p><em>The first essay will appear here when it is ready.</em></p>
+    ) : essays.map((essay) => (
       <div class="essay-entry">
         <p class="title">
           <a href={`/essays/${essay.id}`}>{essay.data.title}</a>
