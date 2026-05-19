@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const essays = await getCollection('essays');
+essays.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const dateFmt = (d: Date) =>
+  d.toLocaleDateString('en-GB', { month: 'long', year: 'numeric' });
+---
+
+<BaseLayout
+  title="Essays"
+  description="Short prose addressing optimisation blindness as it surfaces in practice."
+>
+  <article class="prose">
+    <h1>Essays</h1>
+
+    <p>Short prose addressing <a href="/concept">optimisation blindness</a> as it surfaces in practice. The form is essay rather than article: argued, paced, and meant to be read once carefully rather than scanned. New pieces are added irregularly, when something is worth saying.</p>
+
+    <hr />
+
+    {essays.map((essay) => (
+      <div class="essay-entry">
+        <p class="title">
+          <a href={`/essays/${essay.id}`}>{essay.data.title}</a>
+        </p>
+        <p class="date">{dateFmt(essay.data.date)}</p>
+        {essay.data.description && <p class="description">{essay.data.description}</p>}
+      </div>
+    ))}
+  </article>
+</BaseLayout>

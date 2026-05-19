@@ -1,0 +1,71 @@
+# Content License
+
+The written content of this repository — the conceptual essays, framework descriptions, mathematical specifications, library entries, and other prose published on [optimisationblindness.org](https://optimisationblindness.org) — is licensed under **Creative Commons Attribution-NonCommercial 4.0 International** (CC BY-NC 4.0).
+
+The code that renders this content is licensed separately under the MIT License. See the `LICENSE` file at the root of this repository.
+
+## What this covers
+
+**Content** (CC BY-NC 4.0) includes:
+
+- The text of all pages on the site (Concept, RevEmo, DEQI, Essays, Library, About)
+- The markdown content files in `src/content/`
+- The prose embedded in the page templates in `src/pages/`
+- The text of this document and of the `README.md`
+
+**Code** (MIT) includes:
+
+- Astro configuration, layout components, and templating logic
+- The CSS in `src/styles/`
+- The build configuration (`astro.config.mjs`, `tsconfig.json`, `package.json`)
+- The favicon
+
+Where prose and code are intermingled in a file (typically `.astro` files), the prose portions are content and the structural portions are code.
+
+## What you can do under CC BY-NC 4.0
+
+You are free to:
+
+- **Share** — copy and redistribute the content in any medium or format.
+- **Adapt** — remix, transform, and build upon the content.
+
+Under the following terms:
+
+- **Attribution** — You must give appropriate credit to Rui Vasconcelos, provide a link to optimisationblindness.org, indicate if changes were made, and not in any way suggest the author endorses you or your use.
+- **NonCommercial** — You may not use the content for commercial purposes.
+
+Academic use — including quotation, citation, classroom use, inclusion in scholarly work, and discussion in non-commercial publications — is explicitly permitted under these terms. Citation is encouraged.
+
+## What you cannot do
+
+You cannot:
+
+- Use substantial portions of the content in commercial products, paid consulting deliverables, paid courses, sponsored content, or paid publications without separate written permission.
+- Republish substantial portions of the content as your own work.
+- Remove attribution.
+
+The non-commercial restriction is intended to protect the integrity of the research programme as an academic and public-interest project. It is not intended to restrict good-faith scholarly or journalistic engagement, which is welcomed.
+
+## Suggested citation
+
+For citation guidance specific to each framework, see the relevant page on the site or the Library page.
+
+For general reference to content from the site:
+
+> Vasconcelos, R. (2026). [Title of page or essay]. *Optimisation Blindness*. Retrieved from https://optimisationblindness.org/[path]
+
+## Commercial licensing
+
+For commercial licensing inquiries, including use of the content in paid consulting deliverables, commercial publications, or for-profit training material, contact vasconcelos@altavella.com.
+
+## Full license text
+
+The full legal text of CC BY-NC 4.0 is available at:
+https://creativecommons.org/licenses/by-nc/4.0/legalcode
+
+A human-readable summary is at:
+https://creativecommons.org/licenses/by-nc/4.0/
+
+---
+
+Copyright © 2026 Rui Vasconcelos. All rights reserved except as expressly granted above.

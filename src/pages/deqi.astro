@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="DEQI"
+  description="Destination Emotional Quality Index: a composite measurement architecture for tracking how AI optimisation erodes emotional quality in tourism cities."
+>
+  <article class="prose">
+    <h1>DEQI</h1>
+    <p class="subtitle">Destination Emotional Quality Index</p>
+    <p class="meta">
+      Version 1.0 · Published 19 May 2026 · Last updated 19 May 2026 · Status: working paper, submitted to <em>International Journal of Tourism Cities</em>, pending preprint · Canonical URL: optimisationblindness.org/deqi
+    </p>
+
+    <p>A composite measurement architecture for tracking how AI optimisation erodes emotional quality in tourism cities.</p>
+
+    <h2>What it measures</h2>
+
+    <p>DEQI operates at the scale of the tourism city. It tracks the gap between what AI optimisation systems measure across a destination and what visitors experience as emotionally significant. The index does not claim to measure place attachment directly — that would require visitor-level psychological instruments deployed at scale. DEQI tracks three observable signatures through which changes in destination emotional quality can be detected over time.</p>
+
+    <p>The three streams are emotional diversity, spatial convergence, and mediation ratio.</p>
+
+    <h2>The three streams</h2>
+
+    <h3>Emotional Diversity Index (EDI)</h3>
+
+    <p>EDI tracks whether the range and granularity of emotional language used by visitors is expanding or compressing over time. A declining EDI is the empirical signature of flattening: visitors may still be reviewing the destination, but the emotional range of what they describe is narrowing.</p>
+
+    <p>EDI is operationalised using Shannon entropy applied to the distribution of emotion categories within a destination's review corpus over a given time window:</p>
+
+    <blockquote>
+      <p><span class="formula">EDI(t) = − Σᵢ pᵢ(t) log pᵢ(t)</span></p>
+    </blockquote>
+
+    <p>where <em>pᵢ(t)</em> is the proportion of reviews classified into emotion category <em>i</em> during period <em>t</em>. Higher entropy indicates a broader emotional vocabulary. Declining entropy across successive windows is the empirical signature of flattening. The choice of emotion-classification scheme — Ekman's basic emotions, Plutchik's wheel, or finer-grained taxonomies — is a methodological decision for the empirical study. The construct is defined by the entropy of the emotional distribution rather than by any specific classification.</p>
+
+    <h3>Spatial Convergence Ratio (SCR)</h3>
+
+    <p>SCR tracks whether visitors are dispersing through the destination or concentrating onto a smaller set of locations. A rising SCR is the empirical signature of herding: the visitor footprint is becoming more concentrated, and the non-mediated city is becoming less visible.</p>
+
+    <p>SCR is operationalised using a Herfindahl-Hirschman concentration index applied to visitor activity across spatial cells in the destination:</p>
+
+    <blockquote>
+      <p><span class="formula">SCR(t) = Σⱼ sⱼ(t)²</span></p>
+    </blockquote>
+
+    <p>where <em>sⱼ(t)</em> is the share of total visitor activity in spatial cell <em>j</em> during period <em>t</em>. SCR ranges from 1/N when activity is perfectly dispersed across N cells, to 1 when entirely concentrated in a single cell. The choice of spatial cell size and the unit of activity — visitor-hours, unique visitors, GPS observations — is a methodological decision for the empirical study.</p>
+
+    <h3>Mediation Ratio (MR)</h3>
+
+    <p>MR estimates the proportion of visitor experiences initiated through algorithmic recommendation rather than through human, unplanned, or non-mediated paths. Because no single data source captures this cleanly, MR is triangulated across three inputs: booking-channel share (BCS), referral attribution from city apps and digital infrastructure (RAR), and visitor self-report (SAM).</p>
+
+    <blockquote>
+      <p><span class="formula">MR(t) = w₁ BCS(t) + w₂ RAR(t) + w₃ SAM(t)</span></p>
+    </blockquote>
+
+    <p>with <em>w₁ + w₂ + w₃ = 1</em>. Weights may be set uniformly (one-third each) as a baseline or calibrated empirically against external validation data. The chosen weighting should be reported alongside any MR value rather than treated as a hidden parameter. A rising MR signals deepening algorithmic mediation of the visitor experience.</p>
+
+    <h2>The composite</h2>
+
+    <p>DEQI combines the three streams into a single composite. Before aggregation, each stream is expressed as a normalised proportional deviation from a destination-specific baseline, so that movements are comparable in scale across components and all three increase as destination emotional quality declines.</p>
+
+    <blockquote>
+      <p><span class="formula">DEQI(t) = α₁ [(EDI₀ − EDI(t)) / EDI₀] + α₂ [(SCR(t) − SCR₀) / SCR₀] + α₃ [(MR(t) − MR₀) / MR₀]</span></p>
+    </blockquote>
+
+    <p>where <em>EDI₀</em>, <em>SCR₀</em>, and <em>MR₀</em> are the destination's baseline values measured at an initial time period <em>t₀</em>, and <em>α₁ + α₂ + α₃ = 1</em>. The composite is interpreted as proportional deviation from baseline emotional quality, not as an absolute score. Thresholds are set against each city's own baseline, not against a universal scale. DEQI is a governance indicator, not a ranking instrument.</p>
+
+    <h2>Four testable propositions</h2>
+
+    <p>The framework translates its central claims into four falsifiable propositions, each linking a DEQI movement to a measurable destination outcome documented in place-attachment and destination-management research.</p>
+
+    <p><strong>P1</strong> — A decline in EDI will be associated with lower repeat visitation rates over time.</p>
+
+    <p><strong>P2</strong> — A rise in SCR will be associated with shorter average length of stay over time.</p>
+
+    <p><strong>P3</strong> — A rise in MR will be associated with lower willingness to recommend the destination.</p>
+
+    <p><strong>P4</strong> — A composite decline in DEQI will be associated with weaker price-premium positioning relative to competing destinations.</p>
+
+    <p>The propositions can be tested individually in single-city longitudinal designs, or comparatively across city typologies — high-AI-adoption versus low-AI-adoption tourism cities, mature versus emerging destinations, cultural-heritage versus MICE-oriented cities. Each typology offers different sources of variation in the independent variables, and each carries different threats to internal validity that future empirical work will need to address.</p>
+
+    <h2>Destination-level circuit breakers</h2>
+
+    <p>DEQI is paired with a governance mechanism: destination-level circuit breakers. The term is borrowed from financial systems, where circuit breakers halt trading when aggregate market movements cross specified thresholds. The mechanism interrupts the system as a whole, not individual transactions. Tourism city governance faces a structurally similar problem: individual AI systems may be locally rational, locally legal, and locally compliant, but the aggregate destination-level effect cannot be addressed by adjudicating individual systems one at a time.</p>
+
+    <p>Translated to tourism cities, circuit breakers are governance constraints embedded in destination-scale decision-making. When DEQI indicators cross thresholds suggesting that emotional quality is being eroded, the trigger requires destination management organisations to pause specific AI deployments, modify regulatory permissions, or impose temporary constraints. Institutional location varies by destination — a DMO, a municipal government, a regional tourism authority, or a public-private body. The mechanism specifies the trigger. Institutional design is a question for each destination.</p>
+
+    <p>The framework does not resolve the underlying tension between AI optimisation and emotional place quality. It makes the tension visible to governance and creates a mechanism through which governance can act on it before erosion appears in lagging indicators of competitiveness.</p>
+
+    <h2>Status</h2>
+
+    <p>DEQI is submitted to the <em>International Journal of Tourism Cities</em> and is pending preprint. The full conceptual paper develops the framework alongside the broader concept of optimisation blindness at the destination level, situates it within three literatures (AI in tourism cities, place attachment in urban tourism, and digital governance), and discusses implications for research and practice.</p>
+
+    <h2>Suggested citation</h2>
+
+    <blockquote>
+      <p>Vasconcelos, R. (forthcoming). Optimisation blindness at the destination level: How AI systems erode emotional place quality in tourism cities. <em>International Journal of Tourism Cities</em>.</p>
+    </blockquote>
+
+    <p>The preprint URL will be added on release.</p>
+  </article>
+</BaseLayout>

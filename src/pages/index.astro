@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const essays = await getCollection('essays');
+essays.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const latestEssay = essays[0];
+const dateFmt = (d: Date) =>
+  d.toLocaleDateString('en-GB', { month: 'long', year: 'numeric' });
+---
+
+<BaseLayout title="optimisationblindness.org">
+  <section class="hero">
+    <p class="lede">
+      <strong>Optimisation blindness</strong> is the property of an automated environment in which locally rational optimisation, performed by multiple systems in parallel, aggregates into outcomes that no individual system can detect — because the relevant signals are absent from any one objective function.
+    </p>
+    <p class="hierarchy">
+      The work proceeds at three levels. <strong>The concept</strong> names what optimisation cannot see. <strong>Two measurement frameworks operationalise it:</strong> <a href="/revemo">RevEmo</a> at the scale of the hotel property, <a href="/deqi">DEQI</a> at the scale of the tourism city. <strong>Essays and working papers</strong> develop the implications.
+    </p>
+  </section>
+
+  <hr />
+
+  <section>
+    <p class="section-label">Recent</p>
+    <ul class="recent-list">
+      {latestEssay && (
+        <li>
+          <em><a href={`/essays/${latestEssay.id}`}>{latestEssay.data.title}</a>.</em>
+          Essay. {dateFmt(latestEssay.data.date)}.
+        </li>
+      )}
+      <li>
+        <em><a href="/deqi">Optimisation Blindness at the Destination Level (DEQI)</a>.</em>
+        Working paper, <em>International Journal of Tourism Cities</em>. Submitted, pending preprint.
+      </li>
+      <li>
+        <em><a href="/revemo">Revenue per Emotional Moment (RevEmo)</a>.</em>
+        Working paper, <em>International Journal of Hospitality Management</em>. Under review.
+      </li>
+    </ul>
+  </section>
+</BaseLayout>

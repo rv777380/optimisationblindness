@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="The Concept"
+  description="Optimisation blindness: a property of automated environments where locally rational optimisation aggregates into outcomes no individual system can detect."
+>
+  <article class="prose">
+    <h1>The Concept</h1>
+    <p class="meta">
+      Version 1.0 · Published 19 May 2026 · Last updated 19 May 2026 · Status: conceptual essay, under continuing development · Canonical URL: optimisationblindness.org/concept
+    </p>
+
+    <h2>Optimisation Blindness</h2>
+
+    <p>Every dataset has a periphery the model cannot see.</p>
+
+    <p>Modern automated systems are very good at optimising for what they are told to optimise for. They are not, by construction, good at noticing the things that are absent from their objective function. A revenue management system asked to maximise yield will maximise yield. A recommendation engine asked to maximise engagement will produce engagement. A mobility optimiser asked to balance flows will balance them. Each is locally rational. Each is doing precisely what it was built to do.</p>
+
+    <p>What none of them is doing is asking what the optimisation is taking from the system it operates within.</p>
+
+    <p>Optimisation blindness names that gap. The term refers to a property of automated environments in which locally rational optimisation decisions, made by multiple systems operating in parallel, aggregate into outcomes that no individual system can detect — because the relevant signals are absent from any one objective function. The blindness is not a bug. It is a feature of how optimisation works. A system can only act on what it can see, and what it can see is what its designers chose to measure.</p>
+
+    <p>This would not matter if the things automated systems cannot measure were trivial. They are not.</p>
+
+    <h3>Where the concept comes from</h3>
+
+    <p>The vocabulary of optimisation blindness emerges from a specific empirical context — the deployment of artificial intelligence across the hospitality industry and, increasingly, across the tourism city as a whole — but the underlying logic is older. Economists have long described it under different names. Goodhart's Law, in its sharpest form, says that when a measure becomes a target, it ceases to be a good measure. James C. Scott's <em>Seeing Like a State</em> describes how administrative systems flatten complex social realities into legible categories, optimising for the categories at the expense of the realities. Donella Meadows wrote about feedback loops missing from system dashboards. The cybernetic tradition of W. Ross Ashby formalised the requisite variety problem: a controller must possess at least as much variety as the system it controls.</p>
+
+    <p>What is new is not the principle. What is new is the scale and the speed. When optimisation happens in narrow domains operated by humans who can override the dashboard, the blind spots are bounded and recoverable. When optimisation happens across dozens of automated systems operating in parallel at urban or industrial scale, the blind spots become structural. They are no longer the exception. They become the operating condition.</p>
+
+    <p>The conceptual move this work makes is to take a generalisable principle and operationalise it in a specific domain where the consequences are vivid, measurable, and economically material — hospitality and urban tourism — and from there, to develop measurement architectures that may transfer to adjacent fields.</p>
+
+    <h3>The structural moves</h3>
+
+    <p>In environments where optimisation blindness operates, two structural moves recur. Both are observable. Both are local. Neither is wrong in itself. Their aggregation is the problem.</p>
+
+    <p>The first move is <strong>algorithmic curation</strong>. Systems shape what users see, choose, and experience. Curation is itself neutral. The blind spot is what it produces over time. Curation expresses through two facets. <em>Herding</em> is the convergence of users onto a small number of highly visible options. Recommendation systems privilege what already performs well, and what is recommended performs better, and the loop tightens. <em>Flattening</em> is the compression of variety. Optimisation toward measurable signals — ratings, conversion, dwell time, predicted satisfaction — privileges what is legible, comparable, and validated. What is ambiguous, slow, local, or emerging becomes harder to find. The environment becomes thinner.</p>
+
+    <p>The second move is <strong>data extraction</strong>. Systems capture data and economic value from the user experience. Extraction is also neutral in itself. The blind spot is what it accumulates. Extraction expresses through two facets. <em>Transactional extraction</em> is the capture of economic value at moments of constrained user choice — peak demand, time pressure, dependence, switching costs. The user pays more not because the service has changed, but because the system has detected a moment of reduced flexibility. <em>Ambient surveillance</em> is the continuous data capture that enables the other facets to operate. Surveillance is not, on its own, the harm. It is the substrate that allows curation and extraction to function at scale.</p>
+
+    <p>The four facets compound. A user directed toward the same set of high-scoring options, offered a narrower emotional range, charged more when alternatives are limited, and tracked throughout the encounter is not experiencing four separate harms. They are experiencing one environment. This is what system-level analysis cannot see.</p>
+
+    <h3>What the concept is not</h3>
+
+    <p>Optimisation blindness is distinct from several adjacent concepts, and the distinctions matter.</p>
+
+    <p>It is not <strong>algorithmic bias</strong>, which concerns whom a system serves or disadvantages within its objective function. Bias is a question of distribution. Blindness is a question of what is absent from the function entirely.</p>
+
+    <p>It is not the <strong>digital divide</strong>, which concerns who has access to the systems. Blindness operates on those who have full access.</p>
+
+    <p>It is not <strong>overtourism</strong> or <strong>overuse</strong>, which concern volume and pressure on a system. Blindness can intensify under low volume.</p>
+
+    <p>It is not <strong>technological lock-in</strong>, which concerns path dependence in infrastructure choices.</p>
+
+    <p>It is not <strong>surveillance capitalism</strong>, which concerns the political economy of platform-level data extraction. Surveillance capitalism is a context within which optimisation blindness operates; the two concepts overlap but address different questions.</p>
+
+    <p>The narrowness is intentional. Optimisation blindness names what the optimisation cannot see by design, no more and no less. The construct earns its keep by being precise.</p>
+
+    <h3>Two frameworks</h3>
+
+    <p>The concept becomes operational through measurement. Two frameworks have been developed, each at a different scale.</p>
+
+    <p><strong><a href="/revemo">RevEmo</a></strong> — Revenue per Emotional Moment — operates at the scale of the property and the individual guest encounter. It quantifies the economic impact of emotional moments on revenue uplift, retention, and asset valuation in hospitality contexts. RevEmo is currently in academic review at the <em>International Journal of Hospitality Management</em>.</p>
+
+    <p><strong><a href="/deqi">DEQI</a></strong> — the Destination Emotional Quality Index — extends the architecture to the tourism city. It measures the gap between what AI optimisation systems measure across a destination and what visitors experience as emotionally significant, through three observable streams: emotional diversity, spatial convergence, and mediation ratio. It is accompanied by a governance mechanism — destination-level circuit breakers — through which DEQI movements can trigger pause, review, or modification of AI optimisation. DEQI is submitted to the <em>International Journal of Tourism Cities</em> and is pending preprint.</p>
+
+    <p>Together, the two frameworks form a multi-scale measurement architecture for what optimisation blindness erodes. RevEmo addresses what is happening inside the property. DEQI addresses what is happening across the city. The argument is that both scales are required, because the optimisation operates at both scales and neither alone produces the full picture.</p>
+
+    <h3>Why this matters now</h3>
+
+    <p>The argument that automation produces unintended consequences is not new. What is new is the rate at which automated systems are being deployed in environments where the costs of optimisation blindness are not borne by the systems deploying them.</p>
+
+    <p>A hotel revenue management system captures yield. The cost of the guest who paid €420 on a Tuesday and never returned is not borne by the revenue management system. It is borne by the asset, the brand, and ultimately the city. A destination recommendation platform captures engagement. The cost of the neighbourhood that became invisible to the mediated visitor is not borne by the platform. It is borne by the destination. The asymmetry between who captures the value of optimisation and who bears its costs is the structural problem these frameworks attempt to make visible.</p>
+
+    <p>This is not a critique of artificial intelligence. AI is not the cause of optimisation blindness. AI is the technology that has industrialised optimisation to the point where what it cannot see has become the operating environment for entire industries and entire cities. The same blindness operates in non-AI optimisation. It is more visible now because the systems are larger, faster, and more numerous.</p>
+
+    <p>The argument is not that optimisation should stop. The argument is that optimisation should be accompanied by measurement of what it cannot see, and by governance mechanisms that can act on those measurements before erosion appears in lagging indicators of competitiveness. RevEmo and DEQI are early proposals in that direction.</p>
+
+    <h3>Where this work is going</h3>
+
+    <p>This is a research programme in progress. The conceptual frame will continue to develop. The frameworks will be tested empirically. The propositions will be falsified or supported. The vocabulary will be challenged. None of this is settled.</p>
+
+    <p>What is settled is the question the work is asking. It extends, by one degree, the question Marc Priestley uses in his work with leadership teams: <em>what are you optimising for?</em> — extended further: <em>what is the optimisation not telling you?</em></p>
+
+    <p>These pages are the place where that extension is being worked out.</p>
+  </article>
+</BaseLayout>

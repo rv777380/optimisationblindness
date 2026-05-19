@@ -1,0 +1,47 @@
+---
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import '../styles/global.css';
+
+export interface Props {
+  title: string;
+  description?: string;
+  canonical?: string;
+}
+
+const {
+  title,
+  description = 'The optimisation blindness research programme. Concept, frameworks, essays, library.',
+  canonical = Astro.url.href,
+} = Astro.props;
+
+const fullTitle = title === 'optimisationblindness.org'
+  ? title
+  : `${title} — optimisationblindness.org`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="author" content="Rui Vasconcelos" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="optimisationblindness.org" />
+  </head>
+  <body>
+    <SiteHeader />
+    <main class="shell">
+      <slot />
+    </main>
+    <SiteFooter />
+  </body>
+</html>
