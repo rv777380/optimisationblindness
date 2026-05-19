@@ -16,12 +16,14 @@ const dateFmt = (d: Date) =>
   <article class="prose">
     <h1>Essays</h1>
 
-    <p>Short prose addressing <a href="/concept">optimisation blindness</a> as it surfaces in practice. The form is essay rather than article: argued, paced, and meant to be read once carefully rather than scanned. New pieces are added irregularly, when something is worth saying.</p>
+    <p>Short prose addressing <a href="/concept">optimisation blindness</a> as it surfaces in practice. The form is essay rather than article: argued, paced, and meant to be read once carefully rather than scanned.</p>
+
+    <p>Essays are added irregularly, when something is worth saying. The section is intentionally sparse. It is not a blog or a content feed.</p>
 
     <hr />
 
     {essays.length === 0 ? (
-      <p><em>The first essay will appear here when it is ready.</em></p>
+      <p><em>No essays have been published yet.</em></p>
     ) : essays.map((essay) => (
       <div class="essay-entry">
         <p class="title">

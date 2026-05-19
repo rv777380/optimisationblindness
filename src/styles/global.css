@@ -255,6 +255,9 @@ hr.tight { margin: 1.5rem 0; }
 
 .hero .hierarchy {
   color: var(--ink-soft);
+}
+
+.hero .hierarchy:last-child {
   margin-bottom: 0;
 }
 
